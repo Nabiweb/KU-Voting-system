@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+        }
+        .navbar-custom {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-item,
+        .navbar-custom .nav-item span,
+        .navbar-custom .btn-logout {
+            color: white;
+        }
+        .navbar-custom .navbar-brand:hover,
+        .navbar-custom .nav-item:hover,
+        .navbar-custom .btn-logout:hover {
+            color: #f8f9fa;
+        }
+        .navbar-custom .btn-logout {
+            background-color: #ff4081;
+            border: none;
+        }
+        .navbar-custom .btn-logout:hover {
+            background-color: #ff79b0;
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255);
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        #vote_button{
+            text-align: center;
+            cursor: pointer;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+    </style>
+    <script type="module" src="./homepage.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom rounded mb-4">
+        <a class="navbar-brand" href="#">KU DETS Voting</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-1 my-1">
+                    🤵🏼‍♂️/🤵🏼‍♀️ <a id="loggedUserFName"></a> <a id="loggedUserLName"></a>
+                </li>
+                <li class="nav-item mx-1 my-1">
+                    📧 <a id="loggedUserEmail"></a>
+                </li>
+                <li class="nav-item mx-1">
+                    <button class="btn btn-logout" id="logout">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="loader" class="center"></div>
+    
+    <div class="container text-center mt-5" id="heading">
+        <h1 class="display-4">Vote for us...</h1>
+        <p id="subheading" class="lead">Welcome to DETS OS presentations website. Watch the presentations and vote for your favourite...</p>
+        <a id="mainbutton_anchor" href="#details_container" class="btn btn-primary btn-lg mt-3">Vote now</a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col">
+                <div id="ht1" class="p-3 bg-secondary text-light rounded shadow-sm my-1">#KU DETS</div>
+            </div>
+            <div class="col">
+                <div id="ht2" class="p-3 bg-secondary text-light rounded shadow-sm my-1">#ENGINEERING</div>
+            </div>
+            <div class="col">
+                <div id="ht3" class="p-3 bg-secondary text-light rounded shadow-sm my-1">#OPERATING SYSTEMS</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="details_container" class="container mt-5">
+        <div id="sub_container" class="text-center">
+            <h2 id="index_heading">CONTENTS</h2>
+            <ul class="list-unstyled">
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g1">Group-1</a>
+                    <div class="index text-muted">Turing</div>
+                </li>
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g2">Group-2</a>
+                    <div class="index text-muted">Dijkstra</div>
+                </li>
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g3">Group-3</a>
+                    <div class="index text-muted">Church</div>
+                </li>
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g4">Group-4</a>
+                    <div class="index text-muted">Shannon</div>
+                </li>
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g5">Group-5</a>
+                    <div class="index text-muted">Neumann</div>
+                </li>
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g6">Group-6</a>
+                    <div class="index text-muted">Babbage</div>
+                </li>
+                <li class="my-2">
+                    <a class="anchor text-decoration-none" href="#g7">Group-7</a>
+                    <div class="index text-muted">Boole</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content" class="container mt-5">
+        <div id="g1" class="group mb-4">
+            <h3 class="group-title">Group-1: Turing</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/p7tyc0QpQuQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="g2" class="group mb-4">
+            <h3 class="group-title">Group-2: Dijkstra</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/U5rsZjdxuUI" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="g3" class="group mb-4">
+            <h3 class="group-title">Group-3: Church</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pOBuBjX9JQs" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="g4" class="group mb-4">
+            <h3 class="group-title">Group-4: Shannon</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/r_6A4TTDUYg" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="g5" class="group mb-4">
+            <h3 class="group-title">Group-5: Neumann</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bAarHkUta_Q" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="g6" class="group mb-4">
+            <h3 class="group-title">Group-6: Babbage</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y2FE5KuREt8" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div id="g7" class="group mb-4">
+            <h3 class="group-title">Group-7: Boole</h3>
+            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ILP61VjpwK0" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="vote_button">
+        <a class="votebutton_anchor btn btn-success my-3" onclick="goToFeedback()">👉🏻click for vote👈🏻</a>
+    </div>
+
+    <footer>
+        <p style="text-align: center;">© KU DETS 2K24</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Redirect to vote page
+        function goToFeedback() {
+            window.location.href = 'vote_here.html';
+        }
+    </script>
+</body>
+</html>
+
+

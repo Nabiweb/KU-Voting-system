@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script type="module" src="firebaseauth.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+        }
+        .form-control {
+            background-color: #333;
+            color: #ffffff;
+            border: 1px solid #555;
+        }
+        .form-control::placeholder {
+            color: #bbb;
+        }
+        .form-control:focus {
+            background-color: #444;
+            color: #ffffff;
+            border: 1px solid #777;
+        }
+        .btn-primary, .btn-outline-danger, .btn-outline-primary, .btn-link {
+            border-radius: 20px;
+        }
+        .btn-primary {
+            background-color: #3a3b3c;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #57585a;
+        }
+        .btn-outline-danger, .btn-outline-primary {
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+        .btn-outline-danger:hover, .btn-outline-primary:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+        .alert-danger {
+            background-color: #b00020;
+            border: none;
+            color: #ffffff;
+        }
+        .text-center p {
+            color: #ffffff;
+        }
+        #signUpButton, #signInButton {
+            color: #1e90ff;
+        }
+        #signUpButton:hover, #signInButton:hover {
+            color: #87ceeb;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #000000;
+            margin-bottom: 20px;
+        }
+        .profile-container {
+            text-align: center;
+            margin-top: -60px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 576px) {
+            .card {
+                margin-top: 15px;
+            }
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+            <div class="card" id="signup" style="display:none;">
+                <div class="card-body">
+                    <div class="profile-container">
+                        <img src="pic/profile.png" alt="Profile Picture" class="profile-pic">
+                    </div>
+                    <h1 class="card-title text-center">Register</h1>
+                    <form method="post" action="">
+                        <div id="signUpMessage" class="alert alert-danger" style="display:none;"></div>
+                        <div class="form-group">
+                            <label for="fName"><i class="fas fa-user"></i> First Name</label>
+                            <input type="text" class="form-control" id="fName" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lName"><i class="fas fa-user"></i> Last Name</label>
+                            <input type="text" class="form-control" id="lName" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rEmail"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" id="rEmail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rPassword"><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" class="form-control" id="rPassword" placeholder="Password" required>
+                        </div>
+                        <button class="btn btn-primary btn-block my-2" id="submitSignUp">Sign Up</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already have an account?</p>
+                        <button id="signInButton" class="btn btn-link">Sign In</button>
+                    </div>
+                </div>
+            </div>
+
+                <div class="card" id="signIn">
+                    <div class="card-body">
+                        <div class="profile-container">
+                            <img src="pic/profile.png" alt="Profile Picture" class="profile-pic">
+                        </div>
+                        <h1 class="card-title text-center">Sign In</h1>
+                        <form method="post" action="">
+                            <div id="signInMessage" class="alert alert-danger" style="display:none;"></div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                            </div>
+                            <button class="btn btn-primary btn-block my-3" id="submitSignIn">Sign In</button>
+                        </form>
+                        <div class="text-center mt-3">
+                            <p>Don't have an account yet?</p>
+                            <button id="signUpButton" class="btn btn-link">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
