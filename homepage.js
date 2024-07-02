@@ -3,13 +3,7 @@ import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/fi
 import { getFirestore, getDoc, doc, updateDoc, setDoc, increment } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDd0D_2zd5nsUT0FCFUav2bq4uVm5w3hFs",
-    authDomain: "voting-32d54.firebaseapp.com",
-    projectId: "voting-32d54",
-    storageBucket: "voting-32d54.appspot.com",
-    messagingSenderId: "429009279898",
-    appId: "1:429009279898:web:168b1446ee52ffba05b823",
-    measurementId: "G-0K7P98VD1M"
+ //Your Firebase api
 };
 
 // Initialize Firebase
